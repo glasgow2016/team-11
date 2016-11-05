@@ -78,7 +78,16 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.7/howto/static-files/
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 
-STATIC_URL = '/static/'
+TEMPLATE_DIRS = (
+    TEMPLATE_PATH,
+)
+
+LOGIN_URL = '/maggie01/login/'
+
+STATIC_PATH = os.path.join(BASE_DIR,'static')
+STATIC_URL = '/static/' # You may find this is already defined as such.
+STATICFILES_DIRS = (
+    STATIC_PATH,
+)
