@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required, permission_required
-
+from django.contrib.auth import logout
+from maggie01.models import *
 
 def index(request):
 	context_dict = {'boldmessage': "I am bold font from the context"}
@@ -33,7 +34,7 @@ def user_login(request):
                 # If the account is valid and active, we can log the user in.
                 # We'll send the user back to the homepage.
                 login(request, user)
-                return HttpResponseRedirect('/maggie01/')
+                return HttpResponseRedirect('/maggie01/welcome_view/')
             else:
                 # An inactive account was used - no logging in!
                 return HttpResponse("Your account is disabled.")
@@ -50,6 +51,20 @@ def user_login(request):
         return render(request, 'maggie01/login.html', {})
 
 @login_required
+def welcome_view(request):
+	if request.user.is_authenticated():
+		username = UserProfile.objects.get(user=request.user)
+		username = username.is_admin
+		if username:
+			return render(request, 'maggie01/welcomeAdmin.html', {})
+		else:
+			return render(request, 'maggie01/welcomeEmployee.html', {})
+	
+	return render(request, 'maggie01/login.html', {})
+
+
+@login_required
 def logout_view(request):
     logout(request)
-    # Redirect to a success page.
+    
+    return HttpResponseRedirect('/maggie01/')

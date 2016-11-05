@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import *
 
 
 # Create your models here.
@@ -15,6 +15,7 @@ class UserProfile(models.Model):
 
 	role = models.CharField(max_length=256, unique=False, blank=False)
 	gender = models.CharField(max_length=256, unique=False, blank=False)
+	is_admin = models.BooleanField(default=False)
 
 	def __unicode__(self):
 		return self.user.username
