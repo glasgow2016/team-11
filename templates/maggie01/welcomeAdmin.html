@@ -65,7 +65,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="manageUsers.html">MANAGE VISITORS</a></li>
+            <li class="active"><a href="/maggie01/manage_visitors/">MANAGE VISITORS</a></li>
             <li><a href="dashboard.html">DASHBOARD</a></li>
             <li><a href="createActivity.html">CREATE ACTIVITY</a></li>
           </ul>
@@ -73,7 +73,9 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-          <h1 class="page-header">Hello, Employee Name!</h1>
+          {% if user.is_authenticated %}
+            <h1 class="page-header">Hello, {{ user.username }}</h1>
+          {% endif %}
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

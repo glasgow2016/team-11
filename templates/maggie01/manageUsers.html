@@ -65,7 +65,6 @@
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">MANAGE VISITORS<span class="sr-only">(current)</span></a></li>
             <li><a href="#">NEW VISITOR</a></li>
-            <li><a href="#">RETURNING VISITOR</a></li>
             <!-- <li><a href="#">Export</a></li> -->
           </ul>
 
@@ -88,37 +87,29 @@
                       <table class="table">
                           <thead>
                               <tr class="filters">
-                                  <th><input class="form-control" placeholder="#" type="text"></th>
-                                  <th><input class="form-control" placeholder="First Name" type="text"></th>
-                                  <th><input class="form-control" placeholder="Last Name" type="text"></th>
-                                  <th><input class="form-control" placeholder="Username" type="text"></th>
+                                  <th><input class="form-control" placeholder="Created at" type="text"></th>
+                                  <th><input class="form-control" placeholder="Visit type" type="text"></th>
+                                  <th><input class="form-control" placeholder="Gender" type="text"></th>
+                                  <th><input class="form-control" placeholder="Person" type="text"></th>
+                                  <th><input class="form-control" placeholder="Cancer site" type="text"></th>
+                                  <th><input class="form-control" placeholder="Journey stage" type="text"></th>
+                                  <th><input class="form-control" placeholder="Nature of visit" type="text"></th>
+                                  <th><input class="form-control" placeholder="Referal" type="text"></th>
                               </tr>
                           </thead>
                           <tbody>
-                              <tr class='clickable-row' data-href='https://delfi.lt'>
-                                  <td>1</td>
-                                  <td>Mark</td>
-                                  <td>Otto</td>
-                                  <td>@mdo</td>
-                              </tr>
-                              <tr>
-                                  <td>2</td>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
-                              </tr>
-                              <tr>
-                                  <td>3</td>
-                                  <td>Larry</td>
-                                  <td>the Bird</td>
-                                  <td>@twitter</td>
-                              </tr>
-                              <tr>
-                                <th>#</th>
-                                <th>Header</th>
-                                <th>Header</th>
-                                <th>Header</th>
-                              </tr>
+                              {% for v in visitors %}
+                                <tr>
+                                  <td> {{ v.created_at }} </td>
+                                  <td> {{ v.visit_type }} </td>
+                                  <td> {{ v.gender }} </td>
+                                  <td> {{ v.person_type }} </td>
+                                  <td> {{ v.cancer_site }} </td>
+                                  <td> {{ v.journey_stage }} </td>
+                                  <td> {{ v.nature_of_visit }} </td>
+                                  <td> {{ v.referal }} </td>
+                                </tr>
+                              {% endfor %}
                           </tbody>
                       </table>
                   </div>

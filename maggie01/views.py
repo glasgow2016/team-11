@@ -67,6 +67,11 @@ def add_visitor(request):
 
 
 @login_required
+def manage_visitors(request):
+	visitors = Visitor.objects.all()
+	return render(request, 'maggie01/manageUsers.html', {"visitors": visitors})
+
+@login_required
 def welcome_view(request):
 	if request.user.is_authenticated():
 		username = UserProfile.objects.get(user=request.user)

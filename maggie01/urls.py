@@ -7,4 +7,5 @@ urlpatterns = patterns('',
 		url(r'^logout/$', views.logout_view, name='logout'),
 		url(r'^welcome_view/$', views.welcome_view, name='welcome_view'),
 		url(r'^add_visitor/$', views.add_visitor, name='add_visitor'),
+		url(r'^manage_visitors/$', views.manage_visitors, name='manage_visitors'),
 		)
