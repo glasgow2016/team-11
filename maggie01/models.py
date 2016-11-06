@@ -22,15 +22,17 @@ class UserProfile(models.Model):
 
 class Visitor(models.Model):
 	created_at = models.DateTimeField(auto_now_add=True)
-	visit_type = models.CharField(max_length=256, unique=False, blank=True)
-	gender = models.CharField(max_length=256, unique=False, blank=True)
-	person_type = models.CharField(max_length=256, unique=False, blank=True)	
-	cancer_site = models.CharField(max_length=256, unique=False, blank=True)
-	journey_stage = models.CharField(max_length=256, unique=False, blank=True)
-	nature_of_visit = models.CharField(max_length=256, unique=False, blank=True)
+	visit_type = models.CharField(max_length=256, unique=False, blank=True, null=True)
+	gender = models.CharField(max_length=256, unique=False, blank=True,	null=True)
+	person_type = models.CharField(max_length=256, unique=False, blank=True, null=True)	
+	cancer_site = models.CharField(max_length=256, unique=False, blank=True, null=True)
+	journey_stage = models.CharField(max_length=256, unique=False, blank=True, null=True)
+	nature_of_visit = models.CharField(max_length=256, unique=False, blank=True, null=True)
 	activity = models.ManyToManyField(Activity);
-	referal = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+	referal = models.ForeignKey(UserProfile, on_delete=models.CASCADE, blank=True, null=True)
 
 	def __unicode__(self):
-		return self.person_type
+		return self.person_type or u''
+
+
 

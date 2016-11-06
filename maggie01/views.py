@@ -50,6 +50,22 @@ def user_login(request):
         # blank dictionary object...
         return render(request, 'maggie01/login.html', {})
 
+
+def add_visitor(request):
+	if request.method == 'POST':
+		v = Visitor(visit_type = request.POST.get('visit_type'),
+				gender = request.POST.get('gender'),
+				person_type = request.POST.get('person_type'),
+				cancer_site = request.POST.get('cancer_site'),
+				journey_stage = request.POST.get('journey_stage'),
+				nature_of_visit = request.POST.get('nature_of_visit'),
+				referal = UserProfile.objects.get(user=request.user)
+				)
+		v.save()
+		return HttpResponse("true")
+	return render(request, 'maggie01/add_visitor.html', {})
+
+
 @login_required
 def welcome_view(request):
 	if request.user.is_authenticated():
