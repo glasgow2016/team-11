@@ -77,6 +77,10 @@ def add_visitor(request):
 
 
 @login_required
+def dashboard(request):
+	return render(request, 'maggie01/pages/index.php', {}) 
+
+@login_required
 def manage_visitors(request):
 	visitors = Visitor.objects.all()
 	return render(request, 'maggie01/manageUsers.html', {"visitors": visitors})

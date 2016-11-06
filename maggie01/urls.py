@@ -9,4 +9,5 @@ urlpatterns = patterns('',
 		url(r'^add_visitor/$', views.add_visitor, name='add_visitor'),
 		url(r'^manage_visitors/$', views.manage_visitors, name='manage_visitors'),
 		url(r'^create_activity/$', views.create_activity, name='create_activity'),
+		url(r'^dashboard/$', views.dashboard, name='dashboard'),
 		)
