@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html lang="en"><head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,7 +51,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <!-- <li><a href="#">Dashboard</a></li> -->
-            <li><a href="/maggie01/">main menu</a></li>
+            <li><a href="#">main menu</a></li>
             <li><a href="../logout">logout</a></li>
           </ul>
           <!-- <form class="navbar-form navbar-right">
@@ -63,59 +65,24 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">MANAGE VISITORS<span class="sr-only">(current)</span></a></li>
+						<li class="active"><a href="manageUsers.html">MANAGE VISITORS</a></li>
             <li><a href="#">NEW VISITOR</a></li>
-            <!-- <li><a href="#">Export</a></li> -->
+            <li><a href="#">RETURNING VISITOR</a></li>
           </ul>
 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-          <h1 class="page-header">MANAGE VISITORS</h1>
+					<h1>Add Activity</h1>
+				    <div class="container" >
 
-
-
-
-
-          <div class="panel panel-primary filterable">
-                      <div class="panel-heading">
-                          <h3 class="panel-title">Current Visitors</h3>
-                          <!-- <div class="pull-right">
-                              <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
-                          </div> -->
-                      </div>
-                      <table class="table">
-                          <thead>
-                              <tr class="filters">
-                                  <th><input class="form-control" placeholder="Created at" type="text"></th>
-                                  <th><input class="form-control" placeholder="Visit type" type="text"></th>
-                                  <th><input class="form-control" placeholder="Gender" type="text"></th>
-                                  <th><input class="form-control" placeholder="Person" type="text"></th>
-                                  <th><input class="form-control" placeholder="Cancer site" type="text"></th>
-                                  <th><input class="form-control" placeholder="Journey stage" type="text"></th>
-                                  <th><input class="form-control" placeholder="Nature of visit" type="text"></th>
-                                  <th><input class="form-control" placeholder="Referal" type="text"></th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              {% for v in visitors %}
-                                <tr>
-                                  <td> {{ v.created_at }} </td>
-                                  <td> {{ v.visit_type }} </td>
-                                  <td> {{ v.gender }} </td>
-                                  <td> {{ v.person_type }} </td>
-                                  <td> {{ v.cancer_site }} </td>
-                                  <td> {{ v.journey_stage }} </td>
-                                  <td> {{ v.nature_of_visit }} </td>
-                                  <td> {{ v.referal }} </td>
-                                </tr>
-                              {% endfor %}
-                          </tbody>
-                      </table>
-                  </div>
-        </div>
-      </div>
-    </div> -->
+				      <form class="form-signin" id="login_form" method="post" action="/maggie01/add_visitor/">
+				        {% csrf_token %}
+				        <label for="inputEmail" class="sr-only">Activity name</label>
+				        <input input type="text" name="person_type" value="" size="50" class="form-control" placeholder="Activity name" required autofocus>
+				        <button class="btn btn-lg btn-primary btn-block" type="submit">Add Activity</button>
+				      </form>
+				    </div> <!-- /container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
