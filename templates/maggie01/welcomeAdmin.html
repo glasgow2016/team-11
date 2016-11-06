@@ -66,16 +66,25 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="/maggie01/manage_visitors/">MANAGE VISITORS</a></li>
-            <li><a href="dashboard.html">DASHBOARD</a></li>
+            <li><a href="/maggie01/dashboard">DASHBOARD</a></li>
             <li><a href="/maggie01/create_activity/">CREATE ACTIVITY</a></li>
           </ul>
 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-          {% if user.is_authenticated %}
+          <!-- {% if user.is_authenticated %}
             <h1 class="page-header">Hello, {{ user.username }}</h1>
-          {% endif %}
+          {% endif %} -->
+
+          <div class="text-center" style="width: 100%;
+        		height: 100%;">
+            {% if user.is_authenticated %}
+              <h1 class="page-header">Hello, {{ user.username }}</h1>
+            {% endif %}
+            <p class="lead">“Our Centres are here for anyone with any type of cancer and their families and friends, offering the practical, emotional and social support that people with cancer need”
+            Laura Lee, Maggie's Chief Executive</p>
+          </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
