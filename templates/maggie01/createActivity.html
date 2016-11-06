@@ -76,10 +76,10 @@
 					<h1>Add Activity</h1>
 				    <div class="container" >
 
-				      <form class="form-signin" id="login_form" method="post" action="/maggie01/add_visitor/">
+				      <form class="form-signin" id="login_form" method="post" action="/maggie01/create_activity/">
 				        {% csrf_token %}
 				        <label for="inputEmail" class="sr-only">Activity name</label>
-				        <input input type="text" name="person_type" value="" size="50" class="form-control" placeholder="Activity name" required autofocus>
+				        <input input type="text" name="name" value="" size="50" class="form-control" placeholder="Activity name" required autofocus>
 				        <button class="btn btn-lg btn-primary btn-block" type="submit">Add Activity</button>
 				      </form>
 				    </div> <!-- /container -->

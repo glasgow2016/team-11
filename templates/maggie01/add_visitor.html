@@ -78,20 +78,18 @@
 
 				      <form class="form-signin" id="login_form" method="post" action="/maggie01/add_visitor/">
 				        {% csrf_token %}
-				        <label for="inputEmail" class="sr-only">person_type</label>
-				        <input input type="text" name="person_type" value="" size="50" class="form-control" placeholder="person_type" required autofocus>
-								<label for="inputEmail" class="sr-only">person_type</label>
-								<input input type="text" name="person_type" value="" size="50" class="form-control" placeholder="Visit type" required autofocus>
-								<label for="inputEmail" class="sr-only">person_type</label>
+				        <label for="visit_type" class="sr-only">visit_type</label>
+				        <input input type="text" name="visit_type" value="" size="50" class="form-control" placeholder="visit_type" required autofocus>
+								<label for="gender" class="sr-only">gender</label>
+								<input input type="text" name="gender" value="" size="50" class="form-control" placeholder="gender" required autofocus>
+								<label for="person_type" class="sr-only">person_type</label>
 								<input input type="text" name="person_type" value="" size="50" class="form-control" placeholder="Gender" required autofocus>
-								<label for="inputEmail" class="sr-only">person_type</label>
-								<input input type="text" name="person_type" value="" size="50" class="form-control" placeholder="Person" required autofocus>
-								<label for="inputEmail" class="sr-only">person_type</label>
-								<input input type="text" name="person_type" value="" size="50" class="form-control" placeholder="Journey stage" required autofocus>
-								<label for="inputEmail" class="sr-only">person_type</label>
-								<input input type="text" name="person_type" value="" size="50" class="form-control" placeholder="Nature of visit" required autofocus>
-								<label for="inputEmail" class="sr-only">person_type</label>
-								<input input type="text" name="person_type" value="" size="50" class="form-control" placeholder="Referal" required autofocus>
+								<label for="cancer_site" class="sr-only">cancer_site</label>
+								<input input type="text" name="cancer_site" value="" size="50" class="form-control" placeholder="cancer_site" required autofocus>
+								<label for="journey_stage" class="sr-only">journey_stage</label>
+								<input input type="text" name="journey_stage" value="" size="50" class="form-control" placeholder="Journey stage" required autofocus>
+								<label for="nature_of_visit" class="sr-only">nature_of_visit</label>
+								<input input type="text" name="nature_of_visit" value="" size="50" class="form-control" placeholder="Nature of visit" required autofocus>
 
 								<button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
 				      </form>

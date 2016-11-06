@@ -51,6 +51,16 @@ def user_login(request):
         return render(request, 'maggie01/login.html', {})
 
 
+@login_required
+def create_activity(request):
+	if request.method == 'POST':
+		a = Activity(name = request.POST.get('name'))
+		a.save()
+		return HttpResponseRedirect('/maggie01/welcome_view/')
+	return render(request, 'maggie01/createActivity.html', {})
+
+
+@login_required
 def add_visitor(request):
 	if request.method == 'POST':
 		v = Visitor(visit_type = request.POST.get('visit_type'),
@@ -62,7 +72,7 @@ def add_visitor(request):
 				referal = UserProfile.objects.get(user=request.user)
 				)
 		v.save()
-		return HttpResponse("true")
+		return HttpResponseRedirect('/maggie01/welcome_view/')
 	return render(request, 'maggie01/add_visitor.html', {})
 
 
