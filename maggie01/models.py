@@ -29,8 +29,10 @@ class Visitor(models.Model):
 	journey_stage = models.CharField(max_length=256, unique=False, blank=True, null=True)
 	nature_of_visit = models.CharField(max_length=256, unique=False, blank=True, null=True)
 	activity = models.ManyToManyField(Activity);
-	referal = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+	referal = models.ForeignKey(UserProfile, on_delete=models.CASCADE, blank=True, null=True)
 
 	def __unicode__(self):
-		return self.person_type
+		return self.person_type or u''
+
+
 
