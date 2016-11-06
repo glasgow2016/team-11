@@ -39,17 +39,20 @@
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                
+
             </div>
             <!-- Top Menu Items -->
-           
+
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
+                    <!-- <li class="active">
+                        <a href="/maggie01/dashboard"><i class="fa fa-fw fa-dashboard"></i>Dashboard</a>
+                    </li> -->
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="/maggie01/manage_visitors/"><i class="fa fa-fw fa-dashboard"></i>Manage Visitors</a>
                     </li>
-                    
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -330,7 +333,7 @@
             useHTML: true,
             headerFormat: '<table>',
             pointFormat: '<tr><th colspan="2"><h3>{point.c_site}</h3></th></tr>' +
-                
+
                 '<tr><th>Cancer sites:</th><td>{point.z}%</td></tr>',
             footerFormat: '</table>',
             followPointer: true
@@ -344,7 +347,7 @@
                 }
             },
             bubble:{
-               
+
                 minSIze:'1%',
                 maxSize:'20%'
             }
@@ -374,7 +377,7 @@
         }]
 
     });
-    
+
     //Line chart
     $('#visits-chart').highcharts({
         title: {
@@ -385,14 +388,14 @@
             crosshair: true
         },
         series:[{
-            
+
             name: 'Year 1',
             data:data1
         },{
             name: 'Year 2',
             data:data2
         }]
-    }); 
+    });
 
 
 
@@ -417,9 +420,9 @@
         resize: true
     });
 
-    
 
-    
+
+
 
 
 });
