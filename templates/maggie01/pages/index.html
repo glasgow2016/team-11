@@ -61,7 +61,7 @@
                                         <img class="media-object" src="http://placehold.it/50x50" alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        <h5 class="media-heading"><strong></strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -358,7 +358,7 @@
                     <div class="col-lg-4">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Cancer Sites</h3>
+                                <h3 class="panel-title"><i class="fa fa-male"></i> Cancer Sites</h3>
                             </div>
                             <div class="panel-body">
                                 <div id="chart2"></div>
@@ -399,18 +399,18 @@
     //call your individual charts
     //add/overwrite any options you need for each chart
 
-    $dates1 =  [2016-10-01,2016-10-02,2016-10-03,2016-10-04,2016-10-05,2016-10-06,2016-10-07,2016-10-08,2016-10-09,2016-10-10];
-    $data1 = [23,113,118,84,89,53,106,119,86,37];
-    $dates2 = [2016-10-11,2016-10-12,2016-10-13,2016-10-14,2016-10-15,2016-10-16,2016-10-17,2016-10-18,2016-10-19,2016-10-20];
-    $data2 = [113,81,77,104,83,98,121,43,47,43];
-    $gender = ['Female','Male','Under 18 Female','Under 18 Male'];
-    $gcount = [270,103,1,4];
+    var dates1 =  ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct'];
+    var data1 = [23,113,118,84,89,53,106,119,86,37];
+    var dates2 = [2016-10-11,2016-10-12,2016-10-13,2016-10-14,2016-10-15,2016-10-16,2016-10-17,2016-10-18,2016-10-19,2016-10-20];
+    var data2 = [113,81,77,104,83,98,121,43,47,43];
+    var gender = ['Female','Male','Under 18 Female','Under 18 Male'];
+    var gcount = [270,103,1,4];
 
-    $visittype = ['Carer','PwC'];
-    $visitcount = [147,470];
+    var visittype = ['Carer','PwC'];
+    var visitcount = [147,470];
 
-    $visittype2 = ['Carer','PwC']
-    $visitcount = [122,523]
+    var visittype2 = ['Carer','PwC']
+    var visitcount = [122,523]
 
     //chart 1
     $('#chart1').highcharts({
@@ -435,11 +435,11 @@
         },
         series:[{
             name: 'PwC',
-            data:[<?php echo $visitcount[1] . ",". $visitcount2[1]; ?>]
+            data:[470,523]
         },
         {
             name: 'Carers',
-            data:[<?php echo $visitcount[0] . ",". $visitcount2[0]; ?>]
+            data:[147,122]
     }]
     });
     //chart 2
@@ -462,25 +462,7 @@
             gridLineWidth: 1,
             title: {
                 text: 'Cancer sites'
-            }/*,
-            labels: {
-                format: '{value} gr'
-            },
-            plotLines: [{
-                color: 'black',
-                dashStyle: 'dot',
-                width: 2,
-                value: 65,
-                label: {
-                    rotation: 0,
-                    y: 15,
-                    style: {
-                        fontStyle: 'italic'
-                    },
-                    text: 'Safe fat intake 65g/day'
-                },
-                zIndex: 3
-            }]*/
+            }
         },
 
         yAxis: {
@@ -488,26 +470,7 @@
             endOnTick: false,
             title: {
                 text: ''
-            }/*,
-            labels: {
-                format: '{value} gr'
-            },
-            maxPadding: 0.2,
-            plotLines: [{
-                color: 'black',
-                dashStyle: 'dot',
-                width: 2,
-                value: 50,
-                label: {
-                    align: 'right',
-                    style: {
-                        fontStyle: 'italic'
-                    },
-                    text: 'Safe sugar intake 50g/day',
-                    x: -10
-                },
-                zIndex: 3
-            }]*/
+            }
         },
 
         tooltip: {
@@ -528,8 +491,7 @@
                 }
             },
             bubble:{
-               // minSize:100,
-                //maxSize:200,
+               
                 minSIze:'1%',
                 maxSize:'20%'
             }
@@ -566,16 +528,16 @@
             text: 'Monthly Visits'
         },
         xAxis: {
-            categories: <?php echo json_encode($dates1) ?>,
+            categories: dates1,
             crosshair: true
         },
         series:[{
             
-            name: 'Month 1',
-            data:[<?php echo join($data1,','); ?>]
+            name: 'Year 1',
+            data:data1
         },{
-            name: 'Month 2',
-            data:[<?php echo join($data2,','); ?>]
+            name: 'Year 2',
+            data:data2
         }]
     }); 
 
@@ -585,18 +547,18 @@
     Morris.Donut({
         element: 'morris-donut-chart',
         data: [{
-            label: "<?php echo $gender[0]; ?>",
-            value: [<?php echo $gcount[0]; ?>]
+            label: gender[0],
+            value: [gcount[0]]
         },  {
-            label: "<?php echo $gender[1]; ?>",
-            value: [<?php echo $gcount[1]; ?>]
+            label: gender[1],
+            value: [gcount[1]]
         },
         {
-            label: "<?php echo $gender[2]; ?>",
-            value: [<?php echo $gcount[2]; ?>]
+            label: gender[2],
+            value: [gcount[2]]
         },  {
-            label: "<?php echo $gender[3]; ?>",
-            value: [<?php echo $gcount[3]; ?>]
+            label: gender[3],
+            value: [gcount[3]]
         }],
         colors:['#0087BD','blue','green','black'],
         resize: true
